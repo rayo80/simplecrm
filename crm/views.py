@@ -22,15 +22,23 @@ class CustomerListView(generics.ListAPIView):
     filterset_fields = {
         'birth_date': ['range', 'exact', 'year', 'month', 'day'],
     }
-    def get(self, request, *args, **kwargs):
-        queryset = self.get_queryset()
-        serializer = self.get_serializer(queryset, many=True)
-        return HttpResponse(serializer.data)
+    #def get(self, request, *args, **kwargs):
+    #    queryset = self.get_queryset()
+    #    serializer = self.get_serializer(queryset, many=True)
+    #    return HttpResponse(serializer.data)
 
 class CompanyListView(generics.ListAPIView):
     queryset = Company.objects.all()
     serializer_class = CompanySerializer
+    #def get(self, request, *args, **kwargs):
+    #    queryset = self.get_queryset()
+    #    serializer = self.get_serializer(queryset, many=True)
+    #    return HttpResponse(serializer.data)
 
 class InteractionListView(generics.ListAPIView):
     queryset = Interaction.objects.all()
     serializer_class = InteractionSerializer
+    #def get(self, request, *args, **kwargs):
+    #    queryset = self.get_queryset()
+    #    serializer = self.get_serializer(queryset, many=True)
+    #    return HttpResponse(serializer.data)
