@@ -1,0 +1,4 @@
+djangorestframework == 3.16.0
+Faker == 37.4.0
+django-filter == 25.1
+gunicorn>=21.2.0
