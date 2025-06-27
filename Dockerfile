@@ -12,7 +12,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Expone el puerto (opcional, útil para documentación)
-EXPOSE 8000
+EXPOSE 8080
 
 # Comando por defecto
-CMD ["gunicorn", "djcrm.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "djcrm.wsgi:application", "--bind", "0.0.0.0:8080"]
