@@ -16,14 +16,13 @@ class CustomerSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def get_last_interaction(self, obj):
-        last_interaction = obj.interaction_set.order_by('-interaction_date').first()
-        if last_interaction:
+        if obj.last_interaction_date and obj.last_interaction_type:
             return {
-                'type': last_interaction.interaction_type,
-                'date': last_interaction.interaction_date
+                'type': obj.last_interaction_type,
+                'date': obj.last_interaction_date
             }
         return None
-
+    
     def get_birthday_formatted(self, obj):
         return obj.birth_date.strftime("%B %d")
 
